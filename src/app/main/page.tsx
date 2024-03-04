@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { getData } from '@/api/games/games';
 import { Games } from '@/components/Games/Games';
+import Link from 'next/link';
 
 import { type GamesActionProps } from '@/lib/types';
 
@@ -18,12 +19,14 @@ export default async function Page() {
   return (
     <>
       <div>Main Page</div>
-      {/* <button onClick={handleLogout}>Logout</button>  // Вынести в клиентский компонент! */}
+      {/* <button onClick={handleLogout}>Logout</button>  // Просто вынести кнопку в клиентский компонент */}
       {games ? (
         games?.games?.map((item: GamesActionProps) => (
-          <>
-            <Games {...item} />
-          </>
+          <div key={item.id}>
+            <Link href={`games/${item.uri}`}>
+              <Games {...item} />
+            </Link>
+          </div>
         ))
       ) : (
         <div>No games</div>
