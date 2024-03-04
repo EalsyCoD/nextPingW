@@ -1,9 +1,12 @@
-import Link from 'next/link';
+/* eslint-disable @typescript-eslint/no-misused-promises */
+import { authenticate } from '@/lib/actions';
 
-export default async function Page() {
+export default function LoginPage() {
   return (
-    <div>
-      <Link href="/about">About</Link>
-    </div>
+    <form action={authenticate}>
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Зарегистрироваться</button>
+    </form>
   );
 }

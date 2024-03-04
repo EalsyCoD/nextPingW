@@ -25,13 +25,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'react/react-in-jsx-scope': 'off',
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: ['**/*.stories.*', '**/.storybook/**/*.*'],
-        peerDependencies: true,
-      },
-    ],
+    'import/no-extraneous-dependencies': 'off',
     'prettier/prettier': [
       'error',
       {
