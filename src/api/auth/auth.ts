@@ -13,8 +13,8 @@ export async function registerUser(formData: any) {
     method: 'POST',
     headers: {
       Authorization: `Basic ${encodedAuthString}`,
-      'Content-Type': 'application/x-www-form-urlencoded', // Добавляем Content-Type
-      accept: 'application/json', // Добавляем accept
+      'Content-Type': 'application/x-www-form-urlencoded',
+      accept: 'application/json',
     },
     body: JSON.stringify(formData),
   });
@@ -32,8 +32,8 @@ export async function loginUser(formData: any) {
     method: 'POST',
     headers: {
       Authorization: `Basic ${encodedAuthString}`,
-      'Content-Type': 'application/x-www-form-urlencoded', // Добавляем Content-Type
-      accept: 'application/json', // Добавляем accept
+      'Content-Type': 'application/x-www-form-urlencoded',
+      accept: 'application/json',
     },
     body: JSON.stringify(formData),
   });
@@ -50,7 +50,6 @@ export async function logout() {
     method: 'GET',
     headers: {
       Authorization: `Basic ${encodedAuthString}`,
-      accept: '*/*',
     },
   });
 

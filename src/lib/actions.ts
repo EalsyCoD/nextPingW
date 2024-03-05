@@ -2,7 +2,7 @@
 /* eslint-disable prettier/prettier */
 'use server';
 
-import { registerUser } from '@/api/auth/auth';
+import { registerUser, logout } from '@/api/auth/auth';
 import { redirect } from 'next/navigation';
 
 export async function authenticate(formData: FormData) {
@@ -10,4 +10,9 @@ export async function authenticate(formData: FormData) {
     await registerUser(formData);
     redirect('/main');
   }
+}
+
+export async function logoutAuth() {
+  await logout();
+  redirect('/');
 }

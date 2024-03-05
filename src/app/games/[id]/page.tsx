@@ -39,7 +39,7 @@ export default function GamePage() {
     <div>
       <h1>Game Details</h1>
       <h1>{gameData.producer}</h1>
-      {/* Другой контент о игре */}
+      {/* Здесь описываем что-то о игре */}
     </div>
   );
 }
