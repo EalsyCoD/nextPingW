@@ -1,4 +1,4 @@
-import { type GameData } from '@/lib/types';
+import { type GameData } from '@/types/types';
 
 // Проверяем, является ли объект data экземпляром типа GameData
 export function isGamesActionProps(data: any): data is GameData {

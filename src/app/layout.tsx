@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import StyledComponentsRegistry from './registry';
+import { ErrorBoundary } from '@/components/error-boundary/error-boundary';
 
 export const metadata: Metadata = {
   title: 'PingWin',
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StyledComponentsRegistry>
-        <body>{children}</body>
+        <ErrorBoundary>
+          <body>{children}</body>
+        </ErrorBoundary>
       </StyledComponentsRegistry>
     </html>
   );

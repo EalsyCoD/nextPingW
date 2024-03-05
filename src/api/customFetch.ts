@@ -1,8 +1,4 @@
-const BASE_URL = 'https://dev.pingwin.fun/server/';
-const username = 'testzone';
-const password = 'gromozeka';
-const authString = `${username}:${password}`;
-const encodedAuthString = btoa(authString);
+import { authApi, encodedAuthString } from '../../config/default';
 
 interface FetchOptions {
   method: string;
@@ -33,7 +29,7 @@ customFetch.get = async <T>(
       accept: 'application/json',
     },
   };
-  return customFetch(`${BASE_URL}${url}?${queryParams}`, options);
+  return customFetch(`${authApi.baseUrl}${url}?${queryParams}`, options);
 };
 
 customFetch.post = async <T>(
@@ -52,7 +48,7 @@ customFetch.post = async <T>(
   };
   const requestOptions = { ...defaultOptions, ...options };
 
-  return customFetch(`${BASE_URL}${url}`, requestOptions);
+  return customFetch(`${authApi.baseUrl}${url}`, requestOptions);
 };
 
 customFetch.put = async <T>(url: string, data: T): Promise<T> => {
@@ -65,7 +61,7 @@ customFetch.put = async <T>(url: string, data: T): Promise<T> => {
     },
     body: JSON.stringify(data),
   };
-  return customFetch(`${BASE_URL}${url}`, options);
+  return customFetch(`${authApi.baseUrl}${url}`, options);
 };
 
 customFetch.patch = async <T>(url: string, data: T): Promise<T> => {
@@ -78,7 +74,7 @@ customFetch.patch = async <T>(url: string, data: T): Promise<T> => {
     },
     body: JSON.stringify(data),
   };
-  return customFetch(`${BASE_URL}${url}`, options);
+  return customFetch(`${authApi.baseUrl}${url}`, options);
 };
 
 customFetch.remove = async <T>(url: string): Promise<T> => {
@@ -88,7 +84,7 @@ customFetch.remove = async <T>(url: string): Promise<T> => {
       Authorization: `Basic ${encodedAuthString}`,
     },
   };
-  return customFetch(`${BASE_URL}${url}`, options);
+  return customFetch(`${authApi.baseUrl}${url}`, options);
 };
 
 export default customFetch;
