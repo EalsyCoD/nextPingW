@@ -3,8 +3,13 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:prettier/recommended', 'prettier'],
-  // 'plugin:storybook/recommended'
+  extends: [
+    'standard-with-typescript',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
+    'prettier'
+  ],
   overrides: [
     {
       env: {
@@ -23,11 +28,13 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'import/no-extraneous-dependencies': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'react/react-in-jsx-scope': 'off',
-    'import/no-extraneous-dependencies': 'off',
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-floating-promises": "off",
     'prettier/prettier': [
       'error',
       {
