@@ -4,3 +4,10 @@ export interface GamesActionProps {
   producer: string;
   uri: string;
 }
+
+export interface GameData {
+  favorite: boolean;
+  id: string;
+  producer: string;
+  url: string;
+}
