@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/return-await */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 'use server';
 const username = 'testzone';
 const password = 'gromozeka';
@@ -19,8 +17,7 @@ export async function getData() {
     throw new Error('Failed to register user');
   }
 
-  // eslint-disable-next-line @typescript-eslint/return-await
-  return res.json();
+  return await res.json();
 }
 
 export async function getGameDataByUri(queryParams: string) {
@@ -43,5 +40,5 @@ export async function getGameDataByUri(queryParams: string) {
     throw new Error('Failed to fetch game data');
   }
 
-  return res.json();
+  return await res.json();
 }

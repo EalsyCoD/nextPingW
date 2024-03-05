@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-/* eslint-disable @typescript-eslint/return-await */
 'use server';
 
 const username = 'testzone';
@@ -23,7 +21,7 @@ export async function registerUser(formData: any) {
     throw new Error('Failed to register user');
   }
 
-  return res.json();
+  return await res.json();
 }
 
 export async function loginUser(formData: any) {
@@ -42,7 +40,7 @@ export async function loginUser(formData: any) {
     throw new Error('Failed to register user');
   }
 
-  return res.json();
+  return await res.json();
 }
 
 export async function logout() {
@@ -57,5 +55,5 @@ export async function logout() {
     throw new Error('Failed to register user');
   }
   console.log(res);
-  return res.json();
+  return await res.json();
 }

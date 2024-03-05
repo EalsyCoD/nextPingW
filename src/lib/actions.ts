@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-/* eslint-disable prettier/prettier */
 'use server';
 
 import { registerUser, logout } from '@/api/auth/auth';

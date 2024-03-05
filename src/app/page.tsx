@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import { authenticate } from '@/lib/actions';
 
 export default function LoginPage() {

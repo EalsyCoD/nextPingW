@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { getData } from '@/api/games/games';
 import { Games } from '@/components/Games/Games';
 import Link from 'next/link';
